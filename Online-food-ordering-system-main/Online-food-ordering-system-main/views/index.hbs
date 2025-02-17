@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackSpace</title>
+  
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", async function() {
+        try {
+            const response = await fetch('/getCounts');
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('count1').textContent = data.orders;  // For total orders
+                document.getElementById('count2').textContent = data.dishes;  // For total dishes (or you can use it for 'photos')
+                document.getElementById('count3').textContent = data.dishes;  // For total foods
+                document.getElementById('count4').textContent = data.users;   // For total customers/users
+            } else {
+                console.error("Error fetching the counts:", data.error);
+            }
+        } catch (error) {
+            console.error("Failed to fetch data from the API:", error);
+        }
+    });
+</script>
+<body>
+  {{>navbar loginUser=loginUser}}
+  
+  <section id="/">
+    <div class="container-fluid px-0 top-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+          
+            <div class="mt-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="counter">
+    <section class="counter-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+            <h2>
+              <span id="count1">4568</span>+
+            </h2>
+            <p>Orders</p>
+          </div>
+          <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+            <h2>
+              <span id="count2">675</span>+
+            </h2>
+            <p>Reviews</p>
+          </div>
+          <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+            <h2>
+              <span id="count3">567</span>+
+            </h2>
+            <p>Dishes</p>
+          </div>
+          <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+            <h2>
+              <span id="count4">5673</span>+
+            </h2>
+            <p>Users</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="about" class="my-5">
+    <div class="container">
+      <div class="row">
+        <div class="card col-md-7 ">
+          <img src="/static/image/img/img-1.png" class="img-fluid py-2" alt="">
+        </div>
+        <div class="col-md-5 mt-md-5 mt-1">
+          <h2>No More Waiting Around...</h2>
+          <p>Say goodbye to standing in long queues on a hungry stomach just to place your order. Enjoy hassle free online ordering and payment!</p>
+          <button class="main-btn" style="background-color: #ffd700; transition: background-color 0.4s ease;" onmouseover="this.style.backgroundColor='transparent'; this.style.color='#ffd700';" onmouseout="this.style.backgroundColor='#ffd700'; this.style.color='white';">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="container">
+    <div class="row">
+      <div class="col-md-5 mt-md-5 pt-md-5">
+        <h2>Tell us how you like your food!</h2>
+        <p>We now have food customization options and allergen information for every dish on the menu. </p>
+        <div class="checks">
+          <span><i class="fa fa-check"></i>Contol spice level</span><br>
+          <span><i class="fa fa-check"></i>Control sugar level</span><br>
+          <span><i class="fa fa-check"></i>Customize portion size</span>
+        </div>
+        <button class="main-btn" style="background-color: #ffd700; transition: background-color 0.4s ease;" onmouseover="this.style.backgroundColor='transparent'; this.style.color='#ffd700';" onmouseout="this.style.backgroundColor='#ffd700'; this.style.color='white';">Learn More</button>
+      </div>
+      <div class="col-md-7">
+        <img src="/static/image/img/img-2.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </section>
+
+<section id="testimonial" style="background-color: #ffd700; height:350px;">
+    <div class="container my-5 mx-md-5 px-md-5" style=" margin-top:100px;">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item text-center active">
+                    <div class="my-4"><br><br><br><br>
+                        <h4 class="">Meet the team</h4>
+                        <p class="text-light">Our team consists of 2nd Year Btech Students giving their absolute best to bring this project to life!</p>
+                    <br><br><br>
+                    </div>
+                </div>
+
+                <div class="carousel-item text-center">
+                    <img style="width:150px;height:auto; border-radius:50%" src="/static/image/review/cherry.jpeg" alt="...">
+                    <div class="my-4">
+                        <h4 class="">Cherry Chhallani</h4>
+                        <p class="text-light">Enrollment ID: IIT2023063 | Email ID: cherrychhallani11@gmail.com</p>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Duplicate of the 1st slide -->
+                <div class="carousel-item text-center">
+                    <img style="width:150px;height:auto; border-radius:50%" src="/static/image/review/keesha.jpg" alt="...">
+                    <div class="my-4">
+                        <h4 class="">Keesha Luthra</h4>
+                        
+                        <p class="text-light">Enrollment ID: IIT2023160 | Email ID: keeshaluthra3018@gmail.com</p>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Another duplicate of the 1st slide -->
+                <div class="carousel-item text-center">
+                    <img style="width:150px;height:auto; border-radius:50%" src="/static/image/review/saniya.jpeg" alt="...">
+                    <div class="my-4">
+                        <h4 class="">Saniya Saini</h4>
+                        <p class="text-light">Enrollment ID: IIT2023052 | Email ID: saniyasaini047@gmail.com</p>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- One more duplicate of the 1st slide -->
+                <div class="carousel-item text-center">
+                    <img style="width:150px;height:auto; border-radius:50%" src="/static/image/review/krishika.jpeg" alt="...">
+                    <div class="my-4">
+                        <h4 class="">Krishika Mehta</h4>
+                        <p class="text-light">Enrollment ID: IIT2023155 | Email ID: krishikamehta07@gmail.com</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+
+
+ 
+<section id="reviews">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="mb-0">Share Your Experience!</h2>
+        <p class="text-color">Write a review under 50 words.</p>
+        <div class="text-center my-5">
+          <form action="/submitReview" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <textarea class="form-control" name="reviewText" rows="3" placeholder="Enter your review..." required maxlength="500"></textarea>
+                        </div>
+                        <div class="col-md-2 mt-2">
+                            <button type="submit" class="main-btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+{{#if reviewSuccess}}
+                <div class="alert alert-success">{{reviewSuccess}}</div>
+            {{/if}}
+            {{#if reviewError}}
+                <div class="alert alert-danger">{{reviewError}}</div>
+            {{/if}}
+
+            <!-- Display Existing Reviews -->
+            <section id="reviews">
+    <div class="container">
+        <h2>Latest Reviews</h2>
+        <div id="reviewList">
+            <!-- Reviews will be appended here -->
+        </div>
+    </div>
+</section>
+
+<script>
+    // Function to fetch and display reviews
+    async function fetchReviews() {
+        try {
+            const response = await fetch('/getReviews');
+            const data = await response.json();
+
+            if (data.reviews && data.reviews.length > 0) {
+                const reviewList = document.getElementById('reviewList');
+                reviewList.innerHTML = ''; // Clear existing reviews
+
+                data.reviews.forEach(review => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'review';
+                    reviewItem.innerHTML = `
+                        <h5>${review.userName}</h5>
+                        <p>${review.reviewText}</p>
+                        <small>${new Date(review.createdAt).toLocaleString()}</small>
+                    `;
+                    reviewList.appendChild(reviewItem);
+                });
+            } else {
+                document.getElementById('reviewList').innerHTML = '<p>No reviews found.</p>';
+            }
+        } catch (error) {
+            console.error('Error fetching reviews:', error);
+        }
+    }
+
+    // Call the function to fetch reviews when the page loads
+    window.onload = fetchReviews;
+</script>
+
+        </div>
+    </div>
+</section>
+
+  <section id="footer" style="height: 50px; font-size:large;">
+
+    <div class="text-center" >
+      <small class="mt-5 text-light" >We thank the AlumHack'24 team for their guidance and motivation!</small>
+    </div>
+  </section>
+
+ 
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+    try {
+        const response = await fetch('/getCounts');
+        const data = await response.json();
+        if (response.ok) {
+            document.getElementById('orderCount').textContent = data.orders + "+";  // Total Orders
+            document.getElementById('photoCount').textContent = data.dishes + "+";  // Photos (can also be dishes)
+            document.getElementById('dishCount1').textContent = data.dishes + "+";  // Total Dishes 1
+            document.getElementById('dishCount2').textContent = data.users + "+";  // Total Dishes 2
+        } else {
+            console.error("Error fetching counts:", data.error);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+</script>
+
+<body>
+  {{>navbar loginUser=loginUser}}
+
+    <section>
+        <div class="container-fluid">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-3">
+                       <!-- sidebar -->
+                       {{>sidebar}}
+                    </div>
+                    <div class="col-md-9">
+                    <div class="adminPanel card">
+                        <div class="text-center my-1">
+                            <br>
+                            <br>
+                            
+                            <h4><span class="primary-color">SnackSpace</span> Dashboard</h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mt-1">
+                                    <div class="text-center">
+                                        <img style="width:130px;height:130px;border-radius:50%" src="/static/image/img/d2.jpg" alt="">
+                                        <h3 class="my-2 primary-color">Orders</h3>
+                                        <h2 id="orderCount" class="primary-color mb-0 pb-2">4352+</h2> <!-- Dynamic Orders -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-1">
+                                    <div class="text-center">
+                                        <img style="width:130px;height:130px;border-radius:50%" src="/static/image/img/chef.jpg" alt="">
+                                        <h3 class="my-2 primary-color">Reviews</h3>
+                                        <h2 id="photoCount" class="primary-color mb-0 pb-2">52+</h2> <!-- Dynamic Photos -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card mt-1">
+                                    <div class="text-center">
+                                        <img style="width:130px;height:130px;border-radius:50%" src="/static/image/img/d1.jpg" alt="">
+                                        <h3 class="my-2 primary-color">Users</h3>
+                                        <h2 id="dishCount2" class="primary-color mb-0 pb-2">42+</h2> <!-- Dynamic Dishes 2 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mt-1">
+                                    <div class="text-center">
+                                        <img style="width:130px;height:130px;border-radius:50%" src="/static/image/img/pizza.jpg" alt="">
+                                        <h3 class="my-2 primary-color">Dishes</h3>
+                                        <h2 id="dishCount1" class="primary-color mb-0 pb-2">432+</h2> <!-- Dynamic Dishes 1 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
