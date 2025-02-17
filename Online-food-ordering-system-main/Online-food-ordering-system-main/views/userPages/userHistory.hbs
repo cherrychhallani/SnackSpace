@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{> navbar loginUser=loginUser}}
+    <section>
+        <div class="container-fluid pb-5">
+            {{> userBar}}
+            <div class="container">
+
+                <div class="card p-md-4">
+                    <div class="text-center mb-3">
+                        <h4><span class="primary-color">SnackSpace</span> history.</h4>
+                    </div>
+                    <table class="table table-hover">
+                       <thead>
+    <tr>
+        <th>Pic</th>
+        <th>Dish Name</th>
+        <th>Time</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Payment Type</th>
+        <th>Status</th>
+    </tr>
+</thead>
+
+                        <tbody>
+                            {{#each history}}
+                            <tr>
+                                <td>
+                                    <img style="width:50px;height:50px;border-radius:50%"
+                                        src="/static/dishImage/{{this.photo}}" alt="">
+                                </td>
+                                <td>{{this.dname}}</td>
+                                <td>{{this.time}}</td>
+                                <td>{{this.price}}</td>
+                                <td>{{this.quantity}}</td>
+                                <td>{{this.paymentType}}</td>
+                                {{#ifStates this.states this._id}}<td>{{/ifStates}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+</body>
+
+</html>
