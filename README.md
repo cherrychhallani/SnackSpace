@@ -1,8 +1,12 @@
 ### **SnackSpace - Cafeteria Management System**  
 *A web-based solution for efficient cafeteria order management and resource optimization.*  
 
+![Home Page](ScreenShots/home-page.jpg)
+
 ## 🚀 **About the Project**  
 SnackSpace is a **digital cafeteria management system** that helps cafeterias streamline their ordering process, optimize inventory, and enhance the customer experience.  
+
+![Home Page](ScreenShots/image-1.jpg)
 
 ## 🎯 **Key Features**  
 ✅ **Customer Panel:**  
@@ -10,12 +14,16 @@ SnackSpace is a **digital cafeteria management system** that helps cafeterias st
 - Pre-order and pick up to avoid waiting  
 - Multiple payment options (UPI, COD)  
 - Track order status in real-time  
-- Leave reviews and ratings  
+- Leave reviews and ratings
+
+![Home Page](ScreenShots/user.jpg)
 
 ✅ **Admin Panel:**  
 - Manage menu and pricing dynamically  
 - Accept, reject, or update orders  
-- View analytics    
+- View analytics
+
+![Home Page](ScreenShots/admin.jpg)
 
 ## 🛠 **Tech Stack**  
 | Technology  | Description  |  
